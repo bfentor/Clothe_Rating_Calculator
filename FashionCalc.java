@@ -120,6 +120,9 @@ public class FashionCalc extends Application {
         Label LABhome = new Label("Home");
         Label LABcalc = new Label("Calculator");
         Label LABsett = new Label("Settings");
+        Label LABwelcome = new Label("Welcome");
+        Label LABwelcome1 = new Label("Welcome");
+        Label LABwelcome2 = new Label("Welcome");
        
         //Buttons
         
@@ -168,33 +171,41 @@ public class FashionCalc extends Application {
         VBox LAYCalc = new VBox(20);
         VBox LAYSettings= new VBox(20);
         
-        VBox LAYMenuHome = new VBox(20); 
-        VBox LAYMenuCalc = new VBox(20);
-        VBox LAYMenuSettings= new VBox(20);
+        VBox LAYLabelHome = new VBox(20);
+        VBox LAYLabelCalc = new VBox(20);
+        VBox LAYLabelSettings = new VBox(20);
         
         VBox LAYContentHome = new VBox(20);
         VBox LAYContentCalc = new VBox(20);
         VBox LAYContentSettings = new VBox(20);
         
-        VBox LAYLabelHome = new VBox(20);
-        VBox LAYLabelCalc = new VBox(20);
-        VBox LAYLabelSettings = new VBox(20);
+        VBox LAYMenuHome = new VBox(20); 
+        VBox LAYMenuCalc = new VBox(20);
+        VBox LAYMenuSettings= new VBox(20);
         
         HBox HLAYmenu = new HBox(BUTTtoMenu, BUTTtoCalc, BUTTtoSett);
         HBox HLAYmenu1 = new HBox(BUTTtoMenu1, BUTTtoCalc1, BUTTtoSett1);
         HBox HLAYmenu2 = new HBox(BUTTtoMenu2, BUTTtoCalc2, BUTTtoSett2);
         
-        //Set Margins
+        int WandH = 100;
+        int contentHeight = 400;
+        
+        //Set Size
         HLAYmenu.setPrefWidth(100);
         HLAYmenu.setPrefHeight(100);
         
-        //Set Margins 1
-        HLAYmenu1.setPrefWidth(100);
-        HLAYmenu1.setPrefHeight(100);
+        // Spacing for content
+        LAYContentHome.setPrefHeight(contentHeight);
+        LAYContentCalc.setPrefHeight(contentHeight);
+        LAYContentSettings.setPrefHeight(contentHeight);
         
-        //Set Margins 2
-        HLAYmenu2.setPrefWidth(100);
-        HLAYmenu2.setPrefHeight(100);
+        //Set Size 1
+        HLAYmenu1.setPrefWidth(WandH);
+        HLAYmenu1.setPrefHeight(WandH);
+        
+        //Set Size 2
+        HLAYmenu2.setPrefWidth(WandH);
+        HLAYmenu2.setPrefHeight(WandH);
         
         //Horizontal Spacing
         HLAYmenu.setSpacing(10);
@@ -213,22 +224,34 @@ public class FashionCalc extends Application {
         LAYLabelCalc.setAlignment(Pos.TOP_CENTER);
         LAYLabelSettings.setAlignment(Pos.TOP_CENTER);
         
+        LAYContentHome.setAlignment(Pos.CENTER);
+        LAYContentCalc.setAlignment(Pos.CENTER);
+        LAYContentSettings.setAlignment(Pos.CENTER);
+        
         //Add Buttons
         
-        LAYHome.getChildren().addAll(LABhome);        
-        LAYCalc.getChildren().addAll(LABcalc);
-        LAYSettings.getChildren().addAll(LABsett);
+        LAYLabelHome.getChildren().addAll(LABhome);
+        LAYLabelCalc.getChildren().addAll(LABcalc);
+        LAYLabelSettings.getChildren().addAll(LABsett);
         
-        LAYHome.getChildren().addAll();        
-        LAYCalc.getChildren().addAll();
-        LAYSettings.getChildren().addAll();
+        LAYContentHome.getChildren().addAll(LABwelcome);        
+        LAYContentCalc.getChildren().addAll(LABwelcome1);
+        LAYContentSettings.getChildren().addAll(LABwelcome2);
         
-        LAYHome.getChildren().addAll(HLAYmenu);
-        LAYCalc.getChildren().addAll(HLAYmenu1);
-        LAYSettings.getChildren().addAll(HLAYmenu2);
-          
+        LAYMenuHome.getChildren().addAll(HLAYmenu);
+        LAYMenuCalc.getChildren().addAll(HLAYmenu1);
+        LAYMenuSettings.getChildren().addAll(HLAYmenu2);
         
+        LAYHome.getChildren().addAll(LAYLabelHome, LAYContentHome, LAYMenuHome);        
+        LAYCalc.getChildren().addAll(LAYLabelCalc, LAYContentCalc, LAYMenuCalc);        
+        LAYSettings.getChildren().addAll(LAYLabelSettings, LAYContentSettings, LAYMenuSettings);
         
+        /*
+        LAYHome.getChildren().addAll(LABhome, LABwelcome, HLAYmenu);        
+        LAYCalc.getChildren().addAll(LABcalc, LABwelcome1, HLAYmenu1);        
+        LAYSettings.getChildren().addAll(LABsett, LABwelcome2, HLAYmenu2);        
+        */
+       
         //Set Size 0
         BUTTtoCalc.setMinWidth(80);
         BUTTtoMenu.setMinWidth(80);
