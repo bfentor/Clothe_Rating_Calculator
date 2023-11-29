@@ -214,13 +214,20 @@ public class FashionCalc extends Application {
         LAYLabelSettings.setAlignment(Pos.TOP_CENTER);
         
         //Add Buttons
-        LAYMenuHome.getChildren().addAll(HLAYmenu);
-        LAYMenuCalc.getChildren().addAll(HLAYmenu1);
-        LAYMenuSettings.getChildren().addAll(HLAYmenu2);
+        
+        LAYHome.getChildren().addAll(LABhome);        
+        LAYCalc.getChildren().addAll(LABcalc);
+        LAYSettings.getChildren().addAll(LABsett);
+        
+        LAYHome.getChildren().addAll();        
+        LAYCalc.getChildren().addAll();
+        LAYSettings.getChildren().addAll();
+        
+        LAYHome.getChildren().addAll(HLAYmenu);
+        LAYCalc.getChildren().addAll(HLAYmenu1);
+        LAYSettings.getChildren().addAll(HLAYmenu2);
           
-        LAYMenuHome.getChildren().addAll(LABhome);        
-        LAYMenuCalc.getChildren().addAll(LABcalc);
-        LAYMenuSettings.getChildren().addAll(LABsett);
+        
         
         //Set Size 0
         BUTTtoCalc.setMinWidth(80);
@@ -250,9 +257,9 @@ public class FashionCalc extends Application {
         BUTTtoSett2.setMinHeight(80);
         
         //Assign Layouts to Scenes
-        scene1 = new Scene(LAYMenuHome, windowX, windowY);
-        scene2 = new Scene(LAYMenuCalc, windowX, windowY);
-        scene3 = new Scene(LAYMenuSettings, windowX, windowY);
+        scene1 = new Scene(LAYHome, windowX, windowY);
+        scene2 = new Scene(LAYCalc, windowX, windowY);
+        scene3 = new Scene(LAYSettings, windowX, windowY);
         
         scene1.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         scene2.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
