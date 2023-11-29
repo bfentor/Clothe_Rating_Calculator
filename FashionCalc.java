@@ -62,6 +62,8 @@ public class FashionCalc extends Application {
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
         primaryStage.setResizable(false);
+        
+        
         //primaryStage.initStyle(StageStyle.UNDECORATED);
         
         /*
@@ -124,6 +126,7 @@ public class FashionCalc extends Application {
         //Button Menu
         Button BUTTtoMenu = new Button("Menu");
         BUTTtoMenu.setOnAction(e -> window.setScene(scene1));  
+        
         
         //Button Calculator
         Button BUTTtoCalc = new Button("Calculator");
@@ -250,6 +253,10 @@ public class FashionCalc extends Application {
         scene1 = new Scene(LAYMenuHome, windowX, windowY);
         scene2 = new Scene(LAYMenuCalc, windowX, windowY);
         scene3 = new Scene(LAYMenuSettings, windowX, windowY);
+        
+        scene1.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        scene2.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+        scene3.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
         
         window.setScene(scene1);
         window.setTitle("Fashion Calculator");
