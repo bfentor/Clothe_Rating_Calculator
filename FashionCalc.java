@@ -266,12 +266,6 @@ public class FashionCalc extends Application {
         LAYHome.getChildren().addAll(LAYLabelHome, LAYContentHome, LAYMenuHome);        
         LAYCalc.getChildren().addAll(LAYLabelCalc, LAYContentCalc, LAYMenuCalc);        
         LAYSettings.getChildren().addAll(LAYLabelSettings, LAYContentSettings, LAYMenuSettings);
-        
-        /*
-        LAYHome.getChildren().addAll(LABhome, LABwelcome, HLAYmenu);        
-        LAYCalc.getChildren().addAll(LABcalc, LABwelcome1, HLAYmenu1);        
-        LAYSettings.getChildren().addAll(LABsett, LABwelcome2, HLAYmenu2);        
-        */
        
         //Set Size 0 =================================================================
         BUTTtoCalc.setMinWidth(80);
@@ -302,7 +296,12 @@ public class FashionCalc extends Application {
     
         //Padding
         
-        LAYContentCalc.setPadding(new Insets(50, 50, 50, 50));
+        LAYLabelHome.setPadding(new Insets(10, 0, 0, 0));
+        LAYLabelCalc.setPadding(new Insets(10, 0, 0, 0));
+        LAYContentCalc.setPadding(new Insets(50, 50, 50, 90));
+        LAYLabelSettings.setPadding(new Insets(10, 0, 0, 0));
+        
+        
         
         //Assign Layouts to Scenes ====================================================
         scene1 = new Scene(LAYHome, windowX, windowY);
