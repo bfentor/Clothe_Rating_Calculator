@@ -1,1 +1,1 @@
-java --module-path lib\ --add-modules javafx.controls FashionCalc.java
+START /min java --module-path lib\ --add-modules javafx.controls FashionCalc.java
