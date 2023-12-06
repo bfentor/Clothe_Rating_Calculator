@@ -59,6 +59,10 @@ public class FashionCalc extends Application {
     }
     }
     
+    public static void rTest() throws IOException {
+        Runtime.getRuntime().exec("Rscript clothes_worth.R"); 
+    }
+    
     @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
@@ -167,6 +171,19 @@ public class FashionCalc extends Application {
         //Button Exit
         Button BUTTexit = new Button("Exit");
         BUTTexit.setOnAction(e -> System.exit(0)); 
+
+        Button BUTTR = new Button("R");
+        BUTTexit.setOnAction(e ->
+        {
+            try
+            {
+                 rTest();
+            }
+            catch (IOException ioe)
+            {
+                ioe.printStackTrace();
+            }
+        }); 
         
         //Layouts ====================================================
         VBox LAYHome = new VBox(20); 
@@ -190,7 +207,7 @@ public class FashionCalc extends Application {
         HBox HLAYmenu2 = new HBox(BUTTtoMenu2, BUTTtoCalc2, BUTTtoSett2);
         
         HBox HLAYcontentPrice = new HBox(LABcalcPrice, TEXTprice);
-        HBox HLAYcontentCottonPercent = new HBox(LABcalcCottonPercent, TEXTcottonPercent, LABcalcCottonPercentSign);
+        HBox HLAYcontentCottonPercent = new HBox(LABcalcCottonPercent, TEXTcottonPercent, LABcalcCottonPercentSign, BUTTR);
         HBox HLAYcontentTest = new HBox(LABcalcTest, TEXTtest);
         
         
